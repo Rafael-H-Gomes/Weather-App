@@ -18,7 +18,7 @@
     <h1 class="title">Weather</h1>
     <div class="search-input">
       <form action="">
-        <input id="search" type="text" placeholder="Search for a city" class="search">
+        <input id="search" type="text" placeholder="Search for a city" class="search" onsubmit="getSearchResult()">
         <button class="submit-icon" type="submit"><img src="../public/assets/search.svg" alt="search"/></button>
       </form>
     </div>
@@ -128,6 +128,6 @@
     </div>
      
   </main>
-  <script src="scripts.js"></script>
+  <script type="module" src="scripts/location.js"></script>
 </body>
 </html>
