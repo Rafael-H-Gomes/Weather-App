@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../public/styles/styles.css">
+  <link rel="stylesheet" href="../public/styles/cards.css">
+  
+  <title>Weather App</title>
+</head>
+<body>
+  <div class="top">
+    <h1 class="title">Weather</h1>
+    <div class="search-input">
+      <form action="">
+        <input id="search" type="text" placeholder="Search for a city" class="search">
+        <button class="submit-icon" type="submit"><img src="../public/assets/search.svg" alt="search"/></button>
+      </form>
+    </div>
+  </div>
+  <main class="cards-container">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="city">Monte Aprazível</h3>
+        <h3 class="uf">BR</h3>
+        <!-- Se não for preciso a tag "a" trocar por span -->
+        <a href="#" class="close"><img src="../public/assets/x.svg" alt="close card"></a>
+      </div>
+      <div class="card-content">
+        <span class="weather-icon">
+          <img src="../public/assets/icons/7.svg" alt="cloud">
+        </span>
+        <div class="actual-condition">
+          <h2>13°C</h2>
+          <p class="status">scattered clouds</p>
+        </div>
+      </div>
+      <div class="condition-details">
+        <div class="info-container">
+          <img class="icon" src="../public/assets/wind.svg"  alt="Wind">
+          <p class="value">14 km/h</p>
+          <p class="info-name">Wind</p>
+        </div>
+        <div class="info-container">
+          <img class="icon" src="../public/assets/droplet.svg"  alt="Humidity">
+          <p class="value">60%</p>
+          <p class="info-name">Humidity</p>
+        </div>
+        <div class="info-container">
+          <img class="icon" src="../public/assets/umbrella.svg"  alt="Chance of rain">
+          <p class="value">0%</p>
+          <p class="info-name last-info-name">Chance of Rain</p>
+        </div>
+      </div>
+    
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="city">Monte Aprazível</h3>
+        <h3 class="uf">BR</h3>
+        <span class="close"><img src="../public/assets/x.svg" alt="close card"></span>
+      </div>
+      <div class="card-content">
+        <span class="weather-icon">
+          <img src="../public/assets/icons/7.svg" alt="cloud">
+        </span>
+        <div class="actual-condition">
+          <h2>13°C</h2>
+          <p class="status">scattered clouds</p>
+        </div>
+      </div>
+      <div class="condition-details">
+        <div class="info-container">
+          <img class="icon" src="../public/assets/wind.svg"  alt="Wind">
+          <p class="value">14 km/h</p>
+          <p class="info-name">Wind</p>
+        </div>
+        <div class="info-container">
+          <img class="icon" src="../public/assets/droplet.svg"  alt="Humidity">
+          <p class="value">60%</p>
+          <p class="info-name">Humidity</p>
+        </div>
+        <div class="info-container">
+          <img class="icon" src="../public/assets/umbrella.svg"  alt="Chance of rain">
+          <p class="value">0%</p>
+          <p class="info-name last-info-name">Chance of Rain</p>
+        </div>
+      </div>
+    
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="city">Monte Aprazível</h3>
+        <h3 class="uf">BR</h3>
+        <span class="close"><img src="../public/assets/x.svg" alt="close card"></span>
+      </div>
+      <div class="card-content">
+        <span class="weather-icon">
+          <img src="../public/assets/icons/7.svg" alt="cloud">
+        </span>
+        <div class="actual-condition">
+          <h2>13°C</h2>
+          <p class="status">scattered clouds</p>
+        </div>
+      </div>
+      <div class="condition-details">
+        <div class="info-container">
+          <img class="icon" src="../public/assets/wind.svg"  alt="Wind">
+          <p class="value">14 km/h</p>
+          <p class="info-name">Wind</p>
+        </div>
+        <div class="info-container">
+          <img class="icon" src="../public/assets/droplet.svg"  alt="Humidity">
+          <p class="value">60%</p>
+          <p class="info-name">Humidity</p>
+        </div>
+        <div class="info-container">
+          <img class="icon" src="../public/assets/umbrella.svg"  alt="Chance of rain">
+          <p class="value">0%</p>
+          <p class="info-name last-info-name">Chance of Rain</p>
+        </div>
+      </div>
+    </div>
+     
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>

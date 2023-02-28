@@ -1,0 +1,105 @@
+.card {
+  width: 32.5rem;
+  height: 32.5rem;
+  padding: 2.5rem;
+  background: var(--card-color);
+  border-radius: 3rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-header h3 {
+  color: var(--text-color);
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.card-header .close {
+  width: 3.9rem;
+  height: 3.9rem;
+}
+
+.card-header .close img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-header span img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  padding-top: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  color: var(--text-color);
+}
+
+.weather-icon {
+  width: 9rem;
+  height: 9rem;
+}
+
+.weather-icon img {
+  /* width: 20rem;
+  height: 20rem;
+  transform: translate(-27%, -27%); */
+  width: 17rem;
+  height: 17rem;
+  transform: translate(-24%, -27%);
+}
+
+.actual-condition {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.actual-condition h2 {
+  font-size: 3.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.actual-condition p {
+  color: var(--secondary-text-color);
+  font-size: 1.3rem;
+}
+
+.condition-details {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--text-color);
+
+  padding: 1.2rem 2rem;
+}
+
+.info-container .icon {
+  width: 2rem;
+  height: 2rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.info-container .info-name {
+  margin-top: 1.5rem;
+  color: var(--secondary-text-color);
+}
+
+.last-info-name {
+  max-width: 5rem;
+}
