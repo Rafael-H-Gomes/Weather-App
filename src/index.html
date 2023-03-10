@@ -17,10 +17,32 @@
   <div class="top">
     <h1 class="title">Weather</h1>
     <div class="search-input">
-      <form action="">
-        <input id="search" type="text" placeholder="Search for a city" class="search" onsubmit="getSearchResult()">
+      <form action="" >
+        <input id="search" type="text" placeholder="Search for a city" class="search">
         <button class="submit-icon" type="submit"><img src="../public/assets/search.svg" alt="search"/></button>
+        <div class="loader">
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+          </svg>
+        </div>
       </form>
+      <div class="results-dropdown">
+        <!-- <div class="result-line">
+          <p class="result-city">Monte Aprazível</p>
+          <p class="result-uf">SP</p>
+          <p class="result-country">BR</p>
+        </div> -->
+        <!-- <div class="result-line">
+          <p class="result-city">Rio de Janeiro</p>
+          <p class="result-uf">RJ</p>
+          <p class="result-country">BR</p>
+        </div>
+        <div class="result-line">
+          <p class="result-city">New York</p>
+          <p class="result-uf">NY</p>
+          <p class="result-country">US</p>
+        </div> -->
+      </div>
     </div>
   </div>
   <main class="cards-container">

@@ -38,10 +38,12 @@ body {
 .search-input {
   width: 80%;
   max-width: 64.3rem;
+  position: relative;
 }
 
 .search-input form {
   display: flex;
+  padding-bottom: 1rem;
 }
 
 .search-input button {
@@ -54,6 +56,7 @@ body {
   border: none;
   background: transparent;
   cursor: pointer;
+  /* display: none; */
 }
 
 .search-input img {
@@ -89,14 +92,90 @@ body {
   padding-bottom: 5rem;
 }
 
+.loader {
+  display: none; /**/
+  align-items: center;
+  position: relative;
+  right: 5rem;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  height: 33px;
+  width: 33px;
+}
+
+.path {
+  stroke: #9c9c9c;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+.results-dropdown {
+  display: none;
+  background: var(--input-color);
+  width: 95%;
+  border: 1px solid var(--input-border-color);
+  border-radius: 1.5rem;
+
+  position: absolute;
+  z-index: 10;
+}
+
+.result-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 3.1rem;
+  color: var(--input-text-color);
+  border-bottom: 1px solid var(--input-border-color);
+  cursor: pointer;
+}
+
+.result-line:last-child {
+  border: none;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
 @media (max-width: 440px) {
   .search-input button {
     display: none;
   }
-}
-
-@media (max-width: 360px) {
   .search {
     font-size: 2.5rem;
+  }
+  .result-line {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .search {
+    font-size: 2rem;
+  }
+  .result-line {
+    font-size: 2rem;
   }
 }
