@@ -134,6 +134,10 @@ body {
   cursor: pointer;
 }
 
+.result-key {
+  display: none;
+}
+
 .result-line:last-child {
   border: none;
 }
