@@ -79,24 +79,50 @@ const getSearchResult = async (callback) => {
     
   }
   
-const teste = () => {
-  const conditions = []
+const createCardData = () => {
+  // const conditions = []
 
   for(let key of resultKeys) {
-    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${apiKey}&language=pt-br&details=true`)
-      .then((response) => response.json())
-      .then(data => {
-        conditions.push(data[0])
-      })
-      .catch(err => console.error(err))
+      const locationByKeyUrl = `https://dataservice.accuweather.com/locations/v1/${key}?apikey=${apiKey}&language=pt-br`;
+      const currentConditionsUrl = `https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${apiKey}&language=pt-br&details=true`;
+      const forecastUrl = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${key}?apikey=${apiKey}&language=pt-br&details=true`;
+    
+      Promise.all([
+        fetch(locationByKeyUrl),
+        fetch(currentConditionsUrl),
+        fetch(forecastUrl)
+      ])
+        .then(responses => {
+          return Promise.all(responses.map(response => response.json()));
+        })
+        .then(data => {
+          const [api1Data, api2Data, api3Data] = data;
+    
+          // combina os dados das duas APIs em um único objeto
+          const result = {
+            location: api1Data,
+            currentConditions: api2Data,
+            forecast: api3Data,
+          };
+    
+          console.log(result);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
+    }
   }
-  console.log(conditions)
+
+  // activeCards.push(cardData);
+  // console.log(activeCards);
+
+  // console.log(conditions)
   // console.log('oi')
-}
 
-teste();
+// teste();
 
-searchInput.addEventListener('change', function() {getSearchResult(teste)})
+searchInput.addEventListener('change', function() {getSearchResult(createCardData)})
 form.addEventListener('submit', (event) => event.preventDefault())
   
 export { resultKeys }
