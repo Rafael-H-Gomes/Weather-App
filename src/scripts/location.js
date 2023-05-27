@@ -9,10 +9,6 @@ const loader = document.querySelector('.loader')
 const resultsDropdown = document.querySelector('.results-dropdown')
 const cardsContainer = document.querySelector('.cards-container')
 
-// const close = document.querySelector('.close')
-
-// close.addEventListener('click', function() {deleteCard()})
-
 const activeCards = [];
 
 //verifica se ja tem alguma key salva
@@ -51,8 +47,6 @@ const createCardData = (key) => {
       };
 
       activeCards.push(result);
-      // console.log(activeCards);
-      // console.log(result);
     })
     .catch(error => {
       console.error(error);
@@ -62,7 +56,6 @@ const createCardData = (key) => {
 const showCards = () => {
   cardsContainer.innerHTML = ``;
   for(let card of activeCards) {
-    // cardsContainer.innerHTML +=
     const cardElement = document.createElement('div');
     cardElement.classList.add('card');
     cardElement.innerHTML = `
@@ -122,7 +115,6 @@ const deleteCard = (key) => {
 }
 
 for(let key of resultKeys) {
-  // console.log(key);
   createCardData(key)
 }
 
@@ -146,8 +138,6 @@ const getSearchResult = async (callback) => {
 
       searchResults.push(data)
       
-      // console.log(searchResults)
-
       resultsDropdown.innerHTML = ``
 
       if(searchResults[0].length == 0) {
@@ -183,21 +173,16 @@ const getSearchResult = async (callback) => {
           searchInput.value = ''
           resultsDropdown.style.display = ''
           resultKeys.push(resultKey);
-          console.log(resultKeys)
 
           callback(resultKey);
-          // console.log(activeCards);
           setInterval(showCards, 200);
           
-          // console.log(resultKeys);
           localStorage.setItem('resultKeys', JSON.stringify(resultKeys));
         });
       });
     })
     .catch((err) => {console.error(err)})
-    
-    // console.log(resultKeys);
-    
+        
 }
 
 searchInput.addEventListener('change', function() {getSearchResult(createCardData)})
