@@ -9,6 +9,10 @@ const loader = document.querySelector('.loader')
 const resultsDropdown = document.querySelector('.results-dropdown')
 const cardsContainer = document.querySelector('.cards-container')
 
+// const close = document.querySelector('.close')
+
+// close.addEventListener('click', function() {deleteCard()})
+
 const activeCards = [];
 
 //verifica se ja tem alguma key salva
@@ -56,15 +60,17 @@ const createCardData = (key) => {
 }
 
 const showCards = () => {
-  cardsContainer.innerHTML = ``
+  cardsContainer.innerHTML = ``;
   for(let card of activeCards) {
-    cardsContainer.innerHTML += `
-      <div class="card">
+    // cardsContainer.innerHTML +=
+    const cardElement = document.createElement('div');
+    cardElement.classList.add('card');
+    cardElement.innerHTML = `
         <div class="card-header">
           <h3 class="city">${card.cityName}</h3>
           <h3 class="uf">${card.country}</h3>
-          <!-- Se não for preciso a tag "a" trocar por span -->
-          <a href="#" class="close"><img src="../public/assets/x.svg" alt="close card"></a>
+          
+          <span class="close"><img src="../public/assets/x.svg" alt="close card"></span>
         </div>
         <div class="card-content">
           <span class="weather-icon">
@@ -92,8 +98,26 @@ const showCards = () => {
             <p class="info-name last-info-name">Chance of Rain</p>
           </div>
         </div>
-      </div>
-    `
+    `;
+
+    const closeElement = cardElement.querySelector('.close');
+    closeElement.addEventListener('click', () => {
+      deleteCard(card.locationKey)
+    });
+
+    cardsContainer.appendChild(cardElement);
+  }
+}
+
+const deleteCard = (key) => {
+  let itemIndex = resultKeys.findIndex(item => item === key);
+
+  if (itemIndex !== -1) {
+    resultKeys.splice(itemIndex, 1);
+
+    localStorage.setItem('resultKeys', JSON.stringify(resultKeys));
+
+    window.location.reload();
   }
 }
 
@@ -178,4 +202,3 @@ const getSearchResult = async (callback) => {
 
 searchInput.addEventListener('change', function() {getSearchResult(createCardData)})
 form.addEventListener('submit', (event) => event.preventDefault())
-
